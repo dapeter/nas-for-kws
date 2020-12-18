@@ -2,12 +2,7 @@
 
 ```bash
 @inproceedings{
-  todo_name,
-  title={Resource-efficient {DNN}s for Keyword Spotting using Neural Architecture Search and Quantization},
-  author={David Peter and Wolfgang Roth and Franz Pernkopf},
-  booktitle={International Conference on Pattern Recognition},
-  year={2020},
-  url={todo_url},
+  TODO
 }
 ```
 
