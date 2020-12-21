@@ -1,8 +1,13 @@
-# Resource-efficient DNNs for Keyword Spotting using Neural Architecture Search and Quantization
+# Resource-efficient DNNs for Keyword Spotting using Neural Architecture Search and Quantization [[arXiv]](https://arxiv.org/abs/2012.10138)
 
 ```bash
-@inproceedings{
-  TODO
+@misc{peter2020resourceefficient,
+      title={Resource-efficient DNNs for Keyword Spotting using Neural Architecture Search and Quantization}, 
+      author={David Peter and Wolfgang Roth and Franz Pernkopf},
+      year={2020},
+      eprint={2012.10138},
+      archivePrefix={arXiv},
+      primaryClass={eess.AS}
 }
 ```
 
