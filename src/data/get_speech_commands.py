@@ -109,7 +109,26 @@ if __name__ == '__main__':
             with tarfile.open(dataset_tar_name, 'r:gz') as tar:
                 save_path = raw_dataset_save_path + dataset_type + '/'
                 print('Extracting {} files to {} ...'.format(dataset_type, save_path))
-                tar.extractall(path=save_path, members=which_files(tar, dataset_type))
+                def is_within_directory(directory, target):
+                    
+                    abs_directory = os.path.abspath(directory)
+                    abs_target = os.path.abspath(target)
+                
+                    prefix = os.path.commonprefix([abs_directory, abs_target])
+                    
+                    return prefix == abs_directory
+                
+                def safe_extract(tar, path=".", members=None, *, numeric_owner=False):
+                
+                    for member in tar.getmembers():
+                        member_path = os.path.join(path, member.name)
+                        if not is_within_directory(path, member_path):
+                            raise Exception("Attempted Path Traversal in Tar File")
+                
+                    tar.extractall(path, members, numeric_owner=numeric_owner) 
+                    
+                
+                safe_extract(tar, path=save_path, members=which_files(tar,dataset_type))
 
                 silence_save_path = save_path + 'silence/'
                 sr = 16000
